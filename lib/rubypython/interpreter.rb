@@ -127,6 +127,7 @@ class RubyPython::Interpreter
       path = File.dirname(location)
       base = File.basename(location, ".#{@libext}")
       @locations << File.join(path, "#{base}.so")    # Standard Unix
+      @locations << File.join(path, "#{base}.a")    # Hacking heroku build pack .a file
       @locations << File.join(path, "#{base}.dylib") # Mac OS X
       @locations << File.join(path, "#{base}.dll")   # Windows
     end
